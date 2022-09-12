@@ -19,7 +19,6 @@ builder.Services
     .AddSorting()
     .RegisterDbContext<OrganizationManagementContext>();
 
-//builder.Services.ConnectionString(builder.Configuration);
 
 var app = builder.Build();
 app.MapHealthChecks("/health");

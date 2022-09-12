@@ -1,5 +1,7 @@
 ﻿namespace GraphQL.Models
 {
+
+    [GraphQLName("ApplicationType")]
     [GraphQLDescription("This displays applicationType data.")]
     public class ApplicationTypeViewModel
     {

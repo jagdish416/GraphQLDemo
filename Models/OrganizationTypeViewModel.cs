@@ -1,5 +1,6 @@
 ﻿namespace GraphQL.Models
 {
+    [GraphQLName("OrganizationType")]
     public class OrganizationTypeViewModel
     {
         public int Id { get; set; }

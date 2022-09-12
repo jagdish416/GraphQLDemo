@@ -1,5 +1,6 @@
 ﻿namespace GraphQL.Models
 {
+    [GraphQLName("Application")]
     [GraphQLDescription("This displays application data.")]
     public class ApplicationViewModel
     {

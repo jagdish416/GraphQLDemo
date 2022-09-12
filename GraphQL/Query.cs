@@ -8,6 +8,7 @@ namespace GraphQL.GraphQL
     public class Query
     {
         [UseDbContext(typeof(OrganizationManagementContext))]
+        [UsePaging(IncludeTotalCount = true)]
         [UseProjection]
         [UseFiltering]
         [UseSorting]
@@ -18,6 +19,7 @@ namespace GraphQL.GraphQL
         }
 
         [UseDbContext(typeof(OrganizationManagementContext))]
+        [UsePaging(IncludeTotalCount = true)]
         [UseProjection]
         [UseFiltering]
         [UseSorting]
@@ -28,6 +30,7 @@ namespace GraphQL.GraphQL
         }
 
         [UseDbContext(typeof(OrganizationManagementContext))]
+        [UsePaging(IncludeTotalCount = true)]
         [UseProjection]
         [UseFiltering]
         [UseSorting]
@@ -38,6 +41,7 @@ namespace GraphQL.GraphQL
         }
 
         [UseDbContext(typeof(OrganizationManagementContext))]
+        [UsePaging(IncludeTotalCount = true)]
         [UseProjection]
         [UseFiltering]
         [UseSorting]
@@ -48,6 +52,7 @@ namespace GraphQL.GraphQL
         }
 
         [UseDbContext(typeof(OrganizationManagementContext))]
+        [UsePaging(IncludeTotalCount = true)]
         [UseProjection]
         [UseFiltering]
         [UseSorting]
