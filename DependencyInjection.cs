@@ -7,9 +7,10 @@ namespace GraphQL
     {
         public static IServiceCollection ConnectionString(this IServiceCollection services, IConfiguration configuration)
         {
-            _ = services.AddDbContext<OrganizationManagementContext>(options =>
+            services.AddPooledDbContextFactory<OrganizationManagementContext>((serviceProvider, options) =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("OrganizationDb"));
+                options.UseInternalServiceProvider(serviceProvider);
             });
             return services;
         }

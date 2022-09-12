@@ -7,9 +7,9 @@ namespace GraphQL.Entities
 {
     public partial class OrganizationManagementContext : DbContext
     {
-        public OrganizationManagementContext()
-        {
-        }
+        //public OrganizationManagementContext()
+        //{
+        //}
 
         public OrganizationManagementContext(DbContextOptions<OrganizationManagementContext> options)
             : base(options)
@@ -39,14 +39,14 @@ namespace GraphQL.Entities
         public virtual DbSet<Service> Services { get; set; } = null!;
         public virtual DbSet<ServiceOffering> ServiceOfferings { get; set; } = null!;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                //optionsBuilder.UseSqlServer("Data Source=localhost; Initial Catalog=OrganizationManagement; user id=sa; password=Password@1; TrustServerCertificate=True");
-            }
-        }
+//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//        {
+//            if (!optionsBuilder.IsConfigured)
+//            {
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//                optionsBuilder.UseSqlServer("Data Source=RCDONERPXSQL101; Initial Catalog=OrganizationManagement; user id=stest; password=stest; TrustServerCertificate=True");
+//            }
+//        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

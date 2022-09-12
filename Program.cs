@@ -4,9 +4,11 @@ using GraphQL.GraphQL;
 using GraphQL.Server.Ui.Voyager;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddEntityFrameworkSqlServer();
 
 builder.Services
-    .AddDbContext<OrganizationManagementContext>()
+    .ConnectionString(builder.Configuration)
+    .AddAutoMapper(typeof(Program))
     .AddHealthChecks();
 
 builder.Services
@@ -17,13 +19,13 @@ builder.Services
     .AddSorting()
     .RegisterDbContext<OrganizationManagementContext>();
 
-builder.Services.ConnectionString(builder.Configuration);
+//builder.Services.ConnectionString(builder.Configuration);
 
 var app = builder.Build();
 app.MapHealthChecks("/health");
 app.MapGraphQL();
 app.UseGraphQLVoyager("/graphql/ui", new VoyagerOptions
 {
-    GraphQLEndPoint= "/graphql"
+    GraphQLEndPoint = "/graphql"
 });
 app.Run();
